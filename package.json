@@ -13,7 +13,25 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.9.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.13.0",
+    "eslint-config-preact": "^1.5.0",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
     "typescript": "~5.6.2",
     "vite": "^5.4.10"
+  },
+  "eslintConfig": {
+    "extends": "preact/recommended",
+    "rules": {
+      "no-console": 1
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html,css}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   }
 }
